@@ -17,7 +17,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
-# $Id: package.sh 188 2022-09-17 07:10:20Z rhubarb-geek-nz $
+# $Id: package.sh 254 2023-05-11 13:50:13Z rhubarb-geek-nz $
 #
 
 # This depends on xpath from perl-XML-XPath on RPM based systems
@@ -374,16 +374,6 @@ write_rpm()
 			if test -n "$REQUIRES"
 			then
 				echo "Requires: $REQUIRES"
-			fi
-
-			if test -d "$HERE"
-			then
-				if test 0 -eq $( find  "$HERE" -type f | wc -l )
-				then
-					echo "BuildArch: noarch"
-				fi
-			else
-				echo "BuildArch: noarch"
 			fi
 
 			echo
