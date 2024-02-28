@@ -17,14 +17,12 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
-# $Id: package.sh 254 2023-05-11 13:50:13Z rhubarb-geek-nz $
-#
 
 # This depends on xpath from perl-XML-XPath on RPM based systems
 
 PACKAGE_SH="$0"
-CHANNEL="$1"
-RUNTIME="$2"
+CHANNEL="8.0"
+RUNTIME="8.0.2"
 EXTRA_ARGS="$3"
 LOGNAME=`basename "$PACKAGE_SH"`
 
@@ -799,7 +797,7 @@ then
 
 		cd dotnet-sdk
 
-		../dotnet-install.sh --dry-run --channel $CHANNEL --install-dir "$HERE" $EXTRA_ARGS | package dotnet-sdk
+		../dotnet-install.sh --dry-run --channel $CHANNEL --install-dir "$HERE" $EXTRA_ARGS --version 8.0.200 | package dotnet-sdk
 		
 		get_package 
 
